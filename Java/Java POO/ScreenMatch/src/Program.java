@@ -1,11 +1,13 @@
+import br.com.alura.screenmatch.modelos.Filme;
+
 public class Program {
     public static void main(String[] args) {
 
         Filme meuFilme = new Filme();
-        meuFilme.nome = "O podereso chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 180;
-        meuFilme.incluindoNoPlano = true;
+        meuFilme.setNome("O podereso chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(180);
+        meuFilme.setIncluindoNoPlano(true);
 
         meuFilme.exibeFichaTecnica();
 
@@ -13,6 +15,7 @@ public class Program {
         meuFilme.avalia(5);
         meuFilme.avalia(10);
 
+        System.out.println("Total de avaliações: " + meuFilme.getTotalAvaliacoes());
         System.out.println(meuFilme.pegaMedia());
     }
 }
