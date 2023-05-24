@@ -15,10 +15,10 @@ public class Gerente extends Funcionario{
             return false;
         }
     }
+
     @Override
     public double getBonificacao() {
         System.out.println("Chamando o método de bonificação do Gerente");
-        return super.getBonificacao() + super.getSalario(); // Vem da SuperClass
+        return super.getSalario();
     }
-
 }
