@@ -1,44 +1,69 @@
-body {
-    background-color: black;
-    color: white;
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
     margin: 0;
-    padding: 20px;
+    padding: 0;
 }
 
-main {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+body {
+    height: 100vh;
+    box-sizing: border-box;
+    /*O conteúdo será encolhido para sempre ser mantido dentro do elemento "pai".*/
+    background-color: #18151F;
+    color: #fff;
 }
 
 .titulo-destaque {
-    color: #22d4fd;
+    color: #8153C9;
 }
 
-p {
-    font-size: 16px;
-    margin-bottom: 20px;
+.apresentacao {
+    margin: 10% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.apresentacao__conteudo {
+    width: 615px;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .redes-sociais {
-    margin-top: 20px;
+    height: auto;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    gap: 40px;
+    
 }
 
-.redes-sociais a {
-    display: block;
-    margin-bottom: 10px;
-    color: #ffffff;
-    text-decoration: none;
+.botao-redes-sociais {
+    background-color: #7159c1;
+    color: #fff;
+    text-decoration:none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 img {
     max-width: 350px;
+    border-radius: 2.5%;
     height: auto;
     margin-top: 20px;
 }
