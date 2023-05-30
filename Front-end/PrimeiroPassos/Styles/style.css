@@ -56,6 +56,7 @@ body {
 
 .apresentacao__conteudo__texto>li {
     line-height: 140%;
+    font-family: 'Roboto', sans-serif;
 }
 
 .foto__indigo {
