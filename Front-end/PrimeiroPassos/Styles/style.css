@@ -17,7 +17,8 @@ body {
 }
 
 .cabecalho__menu {
-    display: flex; /*FlexBox - Sempre usando o display flex no elemento container/no elemento pai.
+    display: flex;
+    /*FlexBox - Sempre usando o display flex no elemento container/no elemento pai.
     Para estilizar ou organizar as ancorar/links/nav tem que ser pelo pai/*/
     gap: 80px;
 }
@@ -51,6 +52,49 @@ body {
 
 .titulo-destaque {
     color: #8153C9;
+}
+
+.apresentacao__conteudo__texto>li {
+    line-height: 140%;
+}
+
+.foto__indigo {
+    text-decoration: none;
+    color: #532063;
+    transition: .6s;
+}
+
+.foto__indigo:hover {
+    color: #fff;
+    transition: .6s;
+}
+
+
+.icone__indigo {
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+}
+
+.foto__agi {
+    text-decoration: none;
+    color: #2765E0;
+    transition: .6s;
+}
+
+.foto__agi:hover {
+    color: #fff;
+    transition: .6s;
+}
+
+.icone__agi {
+    width: 25px;
+    height: 25px;
+    border-radius: 100px;
+}
+
+.titulo-destaque-agi {
+    color: #2765E0;
 }
 
 .apresentacao__conteudo__texto {
@@ -94,6 +138,10 @@ body {
     /* background-color: #7159c123; */
     background-color: #fff;
     color: #7159c1;
+    -webkit-box-shadow: 0px 0px 16px 4px rgba(207, 101, 207, 0.76);
+    -moz-box-shadow: 0px 0px 16px 4px rgba(207, 101, 207, 0.76);
+    box-shadow: 0px 0px 16px 4px rgba(207, 101, 207, 0.76);
+    transform: scale(1.04);
 }
 
 img {
