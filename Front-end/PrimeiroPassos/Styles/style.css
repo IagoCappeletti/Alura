@@ -40,7 +40,7 @@ body {
 
 .cabecalho__menu__ancora {
     font-family: var(--fonte-primaria);
-    font-size: 17px;
+    font-size: 1.06rem;
     font-weight: 600;
     color: var(--cor-segundaria);
     text-decoration: none;
@@ -61,7 +61,7 @@ body {
 }
 
 .apresentacao__conteudo__titulo {
-    font-size: 26px;
+    font-size: 1.62rem;
     font-family: var(--fonte-primaria);
 }
 
@@ -134,7 +134,7 @@ body {
 }
 
 .apresentacao__conteudo__texto {
-    font-size: 18px;
+    font-size: 1.12rem;
     font-family: var(--fonte-primaria);
 }
 
@@ -149,7 +149,7 @@ body {
 .redes-sociais__subtitulo {
     font-family: var(--fonte-secundaria);
     font-weight: 400;
-    font-size: 24px;
+    font-size: 1.5rem;
 }
 
 .botao-redes-sociais {
@@ -160,7 +160,7 @@ body {
     text-decoration: none;
     border-radius: 8px;
     padding: 6px;
-    font-size: 17px;
+    font-size: 1.06rem;
     font-family: var(--fonte-primaria);
     transition: .6s;
     display: flex;
@@ -195,5 +195,5 @@ img {
     background-color: var(--cor-bordaFotos);
     text-align: center;
     font-family: var(--fonte-primaria);
-    font-size: 17px;
+    font-size: 1.06rem;
 }
