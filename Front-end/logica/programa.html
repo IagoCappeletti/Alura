@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+
+	<h1>Progrma teste</h1>
+	<h2>Do curso alura</h2>
+
+<script>
+
+	function pulaLinha() {
+			document.write("<br>");
+		}
+	function imprimi (frase) {
+		document.write(frase);
+		pulaLinha();
+	}
+
+	let ano = 2023;
+	imprimi("Flávio tem " + (ano - 1977) + " anos");
+	imprimi("Iago tem " + (ano - 2001) + " anos");
+	imprimi("Pedro tem " + (ano - 2003) + " anos");
+	imprimi("Gabriel tem " + (ano - 2011) + " anos");
+
+	let idadeFlavio = 46;
+	let idadeIago = 22;
+	let idadePedro = 20;
+	let idadeGabriel = 12;
+
+	let media = (idadeFlavio + idadeIago + idadePedro + idadeGabriel) / 4;
+	imprimi("<br>A média das idades sem formatação: " + media);
+	imprimi("A média das idades formatadas: " + Math.round(media));
+
+</script>
