@@ -1,3 +1,4 @@
+//type number
 const meuNumero = 3;
 
 const primeiroNumero = 1;
