@@ -9,7 +9,7 @@ const cliente = {
           console.log("Saldo insuficiente");
         } else {
           this.saldo -= valor;
-          console.log(`Pagamento realizado. Novo saldo: ${this.saldo}`);
+          console.log(`Pagamento realizado com sucesso! Novo saldo: R$ ${this.saldo}.`);
         }
       },
     };
