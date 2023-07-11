@@ -1,0 +1,26 @@
+[
+  {
+    "Nome": "Matrix",
+    "AnoDeLancamento": 1993,
+    "IncluindoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0,
+    "DuracaoEmMinutos": 60
+  },
+  {
+    "Nome": "Avatar",
+    "AnoDeLancamento": 2009,
+    "IncluindoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0,
+    "DuracaoEmMinutos": 162
+  },
+  {
+    "Nome": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+    "AnoDeLancamento": 2005,
+    "IncluindoNoPlano": false,
+    "SomaDasAvaliacoes": 0.0,
+    "TotalAvaliacoes": 0,
+    "DuracaoEmMinutos": 143
+  }
+]
