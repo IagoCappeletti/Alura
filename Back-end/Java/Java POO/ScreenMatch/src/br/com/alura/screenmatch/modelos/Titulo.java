@@ -3,6 +3,8 @@ package br.com.alura.screenmatch.modelos;
 import br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException;
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DecimalFormat;
+
 public class Titulo implements Comparable<Titulo>{
 
     private String nome;
@@ -18,7 +20,12 @@ public class Titulo implements Comparable<Titulo>{
             throw new ErroDeConversaoDeAnoException("Erro!! Ano tem mais de quatro digitos.");
         }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 3));
+
+        String duracao = meuTituloOmdb.runtime().substring(0, 3);
+        double duracaoEmMinutos = Double.parseDouble(duracao);
+        DecimalFormat df = new DecimalFormat("0");
+        String duracaoFormatada = df.format(duracaoEmMinutos);
+        this.duracaoEmMinutos = Integer.valueOf(duracaoFormatada);
     }
 
     public String getNome() {
@@ -83,6 +90,6 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return "Nome = " + nome + ", anoDeLancamento = " + anoDeLancamento + ", Duração = " + duracaoEmMinutos;
+        return "( Nome = " + nome + ", anoDeLancamento = " + anoDeLancamento + ", Duração = " + duracaoEmMinutos + " )";
     }
 }
