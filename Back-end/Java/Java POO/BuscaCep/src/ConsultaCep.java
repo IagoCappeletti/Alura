@@ -21,7 +21,8 @@ public class ConsultaCep {
                     .newHttpClient()
                     .send(request, HttpResponse.BodyHandlers.ofString());
             return new Gson().fromJson(response.body(), Endereco.class);
-
+            
+            
         } catch (Exception e) {
             throw new RuntimeException("Não consegui obter o enderaço a partir desse CEP. ");
         }
