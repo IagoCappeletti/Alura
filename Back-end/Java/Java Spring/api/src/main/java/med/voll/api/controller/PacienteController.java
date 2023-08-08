@@ -1,7 +1,9 @@
 package med.voll.api.controller;
 
 import jakarta.validation.Valid;
-import med.voll.api.paciente.DadosCadastroPaciente;
+import med.voll.api.medico.dto.DadosAtualizacaoMedicoDTO;
+import med.voll.api.paciente.dto.DadosAtualizacaoPacienteDTO;
+import med.voll.api.paciente.dto.DadosCadastroPacienteDTO;
 import med.voll.api.paciente.DadosListagemPaciente;
 import med.voll.api.paciente.Paciente;
 import med.voll.api.paciente.PacienteRepository;
@@ -21,7 +23,7 @@ public class PacienteController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody @Valid DadosCadastroPaciente dados) {
+    public void cadastrar(@RequestBody @Valid DadosCadastroPacienteDTO dados) {
         repository.save(new Paciente(dados));
 
     }
@@ -29,6 +31,13 @@ public class PacienteController {
     @GetMapping
     public Page<DadosListagemPaciente> listar(@PageableDefault(size = 10, sort = {"nome"}) Pageable paginacao) {
         return repository.findAll(paginacao).map(DadosListagemPaciente::new);
+    }
+
+    @PutMapping
+    @Transactional
+    public void atualizar(@RequestBody @Valid DadosAtualizacaoPacienteDTO dados) {
+        var paciente = repository.getReferenceById(dados.id());
+        paciente.atulizarInfromacoes(dados);
     }
 
 }
