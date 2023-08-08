@@ -56,7 +56,7 @@ public class MedicosController {
     @Transactional
     public ResponseEntity excluir(@PathVariable Long id) {
         var medico = repository.getReferenceById(id);
-        medico.excluir();
+        medico.inativar();
 
         return ResponseEntity.noContent().build();
         //204
