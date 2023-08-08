@@ -43,10 +43,11 @@ public class Paciente {
             this.telefone = dados.telefone();
         }
         if (dados.email() != null) {
-            this.email = dados.email();;
+            this.email = dados.email();
         }
         if (dados.enderecos() != null) {
             this.endereco.atualizarInformacoes(dados.enderecos());
         }
     }
+
 }
