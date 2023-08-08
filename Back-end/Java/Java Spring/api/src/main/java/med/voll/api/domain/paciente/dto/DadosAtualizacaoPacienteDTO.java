@@ -1,9 +1,9 @@
-package med.voll.api.paciente.dto;
+package med.voll.api.domain.paciente.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
-import med.voll.api.endereco.DadosEnderecos;
-import med.voll.api.paciente.Paciente;
+import med.voll.api.domain.paciente.Paciente;
+import med.voll.api.domain.endereco.DadosEnderecos;
 
 public record DadosAtualizacaoPacienteDTO(
         @NotNull
