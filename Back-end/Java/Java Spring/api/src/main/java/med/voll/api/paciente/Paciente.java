@@ -26,8 +26,10 @@ public class Paciente {
     private String cpf;
     @Embedded
     private Endereco endereco;
+    private Boolean ativo;
 
     public Paciente(@Valid DadosCadastroPacienteDTO dados) {
+        this.ativo = true;
         this.nome = dados.nome();
         this.email = dados.email();
         this.telefone = dados.telefone();
@@ -50,4 +52,7 @@ public class Paciente {
         }
     }
 
+    public void inativar() {
+        this.ativo = false;
+    }
 }
