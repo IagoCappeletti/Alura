@@ -8,16 +8,18 @@ import jakarta.validation.constraints.Pattern;
 import med.voll.api.domain.endereco.DadosEnderecos;
 
 public record DadosCadastroPacienteDTO(
-        @NotBlank //Só para Strings
+        //Só para Strings
+        @NotBlank(message = "{nome.obrigatorio}")
         String nome,
-        @NotBlank
-        @Email
+        @NotBlank(message = "{email.obrigatorio}")
+        @Email(message = "{email.invalido}")
         String email,
-        @NotBlank
+        @NotBlank(message = "{telefone.obrigatorio}")
         String telefone,
-        @NotBlank
-        @Pattern(regexp = "\\d{11}")
+        @NotBlank(message = "{cpf.obrigatorio}")
+        @Pattern(regexp = "\\d{11}", message = "{cpf.invalido}")
         String cpf,
-        @NotNull @Valid
+        @NotNull(message = "{endereco.obrigatorio}")
+        @Valid
         DadosEnderecos endereco) {
 }
