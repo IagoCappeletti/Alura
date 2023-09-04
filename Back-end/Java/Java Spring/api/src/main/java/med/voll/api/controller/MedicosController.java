@@ -30,6 +30,7 @@ public class MedicosController {
         repository.save(medico);
 
         var uri = uriBuilder.path("/medicos/{id}").buildAndExpand(medico.getId()).toUri();
+        /*Para fazer um parametro dinâmico usar {id} */
 
         return ResponseEntity.created(uri).body(new DadosMedicoDetalhadoDTO(medico));
         /*Devolvendo o código 201, com cabeçalho location com URI e devolver no corpo da resposta uma representação
