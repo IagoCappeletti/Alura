@@ -23,7 +23,7 @@ void ExibirOpcaoDoMenu() {
 
     Console.Write("\nDigite a opção desejada: ");
     String opcao = Console.ReadLine()!; //O ! serve para dizer que o valor não pode ser nulo
-    int opcaoConvertidaInteiro = int.Parse(opcao);
+    int.TryParse(opcao, out int opcaoConvertidaInteiro);
     
     switch(opcaoConvertidaInteiro) {
         case 1: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
