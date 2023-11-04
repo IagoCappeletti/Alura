@@ -1,6 +1,7 @@
-﻿String mensagemBoaVinda = "Bem-Vindo ao o Screen Sound !";
+﻿String mensagemBoasVinda = "Bem-Vindo ao o Screen Sound !";
+List<String> listaDeBandas = new List<string>();
 
-void ExibirMensagemBoasVinda () {
+void ExibirLogo() {
     Console.WriteLine(@"
     
 ░██████╗░█████╗░██████╗░███████╗███████╗███╗░░██╗░██████╗░█████╗░██╗░░░██╗███╗░░██╗██████╗░
@@ -10,11 +11,12 @@ void ExibirMensagemBoasVinda () {
 ██████╔╝╚█████╔╝██║░░██║███████╗███████╗██║░╚███║██████╔╝╚█████╔╝╚██████╔╝██║░╚███║██████╔╝
 ╚═════╝░░╚════╝░╚═╝░░╚═╝╚══════╝╚══════╝╚═╝░░╚══╝╚═════╝░░╚════╝░░╚═════╝░╚═╝░░╚══╝╚═════╝░
     ");
-    Console.WriteLine(mensagemBoaVinda);
+    Console.WriteLine(mensagemBoasVinda);
 }
 
 void ExibirOpcaoDoMenu() {
 
+    ExibirLogo();
     Console.WriteLine("\n1# - Adicionar uma banda");
     Console.WriteLine("2# - Mostrar todas as bandas");
     Console.WriteLine("3# - Avaliar a banda");
@@ -26,9 +28,9 @@ void ExibirOpcaoDoMenu() {
     int.TryParse(opcao, out int opcaoConvertidaInteiro);
     
     switch(opcaoConvertidaInteiro) {
-        case 1: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
+        case 1: RegistrarBanda();
             break;
-        case 2: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
+        case 2: ExibirListaDeBandas();
             break;
         case 3: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
             break;
@@ -41,5 +43,30 @@ void ExibirOpcaoDoMenu() {
     }
 }
 
-ExibirMensagemBoasVinda();
+void RegistrarBanda() {
+  Console.Clear();
+  Console.WriteLine("===================");
+  Console.WriteLine("Registro de bandas");
+  Console.WriteLine("===================\n");
+  Console.Write("Digite o noma da banda que deseja registrar: ");
+  String nomeDaBanda = Console.ReadLine()!;
+  listaDeBandas.Add(nomeDaBanda);
+  Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso! ");
+  Thread.Sleep(2000);
+  Console.Clear();
+  ExibirOpcaoDoMenu();
+}
+
+void ExibirListaDeBandas() {
+    Console.Clear();
+    Console.WriteLine("==============================");
+    Console.WriteLine("Exibindo as bandas registradas");
+    Console.WriteLine("==============================\n");
+
+    foreach (var banda in listaDeBandas) {
+        Console.WriteLine($"Banda: {banda}");
+    }
+    ExibirOpcaoDoMenu();
+}
+
 ExibirOpcaoDoMenu();
