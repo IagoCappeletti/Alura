@@ -1,5 +1,7 @@
 ﻿String mensagemBoasVinda = "Bem-Vindo ao o Screen Sound !";
-List<String> listaDeBandas = new List<string>();
+//List<String> listaDeBandas = new List<string>();
+
+Dictionary<String, List<int>> bandasRegistradas = new Dictionary<string, List<int>>(); 
 
 void ExibirLogo() {
     Console.WriteLine(@"
@@ -32,7 +34,7 @@ void ExibirOpcaoDoMenu() {
             break;
         case 2: ExibirListaDeBandas();
             break;
-        case 3: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
+        case 3: AvaliarBanda();
             break;
         case 4: Console.WriteLine("Você digitou a opção " + opcaoConvertidaInteiro);
             break;
@@ -46,9 +48,9 @@ void ExibirOpcaoDoMenu() {
 void RegistrarBanda() {
   Console.Clear();
   ExibirTituloDaOpcao("Registro das bandas");
-  Console.Write("Digite o noma da banda que deseja registrar: ");
+  Console.Write("Digite o nomea da banda que deseja registrar: ");
   String nomeDaBanda = Console.ReadLine()!;
-  listaDeBandas.Add(nomeDaBanda);
+  bandasRegistradas.Add(nomeDaBanda, new List<int>());
   Console.WriteLine($"A banda {nomeDaBanda} foi registrada com sucesso! ");
   Thread.Sleep(2000);
   Console.Clear();
@@ -58,12 +60,36 @@ void RegistrarBanda() {
 void ExibirListaDeBandas() {
     Console.Clear();
     ExibirTituloDaOpcao("Exibindo as bandas registradas");
-    foreach (var banda in listaDeBandas) {
+    foreach (var banda in bandasRegistradas.Keys) {
         Console.WriteLine($"Banda: {banda}");
         Thread.Sleep(2000);
     }
     ExibirOpcaoDoMenu();
+    
 }
+
+void AvaliarBanda() {
+    Console.Clear();
+    ExibirTituloDaOpcao("Avaliar banda");
+    
+    Console.Write("Digite o nome da banda para avaliar: ");
+    string nomeDaBanda = Console.ReadLine()!;
+    if (bandasRegistradas.ContainsKey(nomeDaBanda)) {
+        Console.Write($"Qual sua avaliação para a banda {nomeDaBanda}: ");
+        int nota = int.Parse(Console.ReadLine()!);
+        bandasRegistradas[nomeDaBanda].Add(nota);
+        Console.WriteLine($"\nA nota {nota} para a {nomeDaBanda} foi registrada com sucesso!");
+    }
+    else {
+        Console.WriteLine($"A banda {nomeDaBanda} não foi encontrada!");
+        Thread.Sleep(2000);
+        Console.Clear();
+        ExibirOpcaoDoMenu();
+    }
+    
+    ExibirOpcaoDoMenu();
+}
+
 
 void ExibirTituloDaOpcao(string titulo)
 {
